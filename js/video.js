@@ -18,7 +18,7 @@ document.querySelector("#play").addEventListener("click", function() {
 	video.play();
 	let vol = video.volume;
 	//does this work right??
-	document.querySelector("#volume").innerHTML = vol;
+	document.querySelector("#volume").innerHTML = vol * 100 + '%';
 	console.log("Play Video");
 });
 
@@ -86,11 +86,28 @@ document.querySelector("#mute").addEventListener("click", function() {
 })
 
 //volume slider
+// document.querySelector("#mute").addEventListener("click", function() {
+	var slider = document.getElementById("slider");
+	var output = document.getElementById("volume");
+		output.innerHTML = slider.value;
+
+	slider.oninput = function() {
+  		output.innerHTML = this.value;}
+// })
 
 
 //styled
+	document.querySelector("#vintage").addEventListener("click", function() {
+		console.log("old school")
+		video.classList.add("oldSchool");
+	})
 
 //original
+document.querySelector("#orig").addEventListener("click", function() {
+	console.log("original")
+		video.classList.remove("oldSchool");
+})
+
 
 
 
