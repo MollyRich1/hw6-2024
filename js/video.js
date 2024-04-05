@@ -85,17 +85,6 @@ document.querySelector("#mute").addEventListener("click", function() {
 	}
 })
 
-//volume slider
-// document.querySelector("#mute").addEventListener("click", function() {
-	var slider = document.getElementById("slider");
-	var output = document.getElementById("volume");
-		output.innerHTML = slider.value;
-
-	slider.oninput = function() {
-  		output.innerHTML = this.value * 100;}
-		video.volume = this.value;
-// })
-
 
 //styled
 	document.querySelector("#vintage").addEventListener("click", function() {
@@ -110,5 +99,18 @@ document.querySelector("#orig").addEventListener("click", function() {
 })
 
 
+//volume slider
+document.querySelector("#slider").addEventListener("change", function() {
+	console.log("")
+	video.volume = this.value/100;
+	
+	// document.getElementById("slider").value;
+	document.getElementById("volume").innerHTML = video.volume * 100 + '%';
+	
+
+	// slider.oninput = function() {
+  	// 	output.innerHTML = this.value;}
+	// 	video.volume = this.value;
+})
 
 
